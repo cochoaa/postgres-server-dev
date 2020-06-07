@@ -1,15 +1,13 @@
-# ftp-serve-dev
+# postgres-server-dev
 Servidor Postgres para ambiente de desarrollo
 
 Dependencies
 ------------
-
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * [Vagrant](https://www.vagrantup.com)
 
 Setup
 -----
-
 * Download and install Virtual Box
 
 * Download and install Vagrant
@@ -18,13 +16,13 @@ Setup
 
 * Start virtual machine
 
-```
+```sh
 cd postgres-server-dev
 vagrant up
 ```
 * Stop virtual machine
 
-```
+```sh
 vagrant halt
 ```
 * Delete virtual machine
@@ -34,12 +32,9 @@ vagrant destroy
 ```
 * Connection to Postgres 
 
-```
-user:postgres 
-pass:postgres
-port:5432
-ip:192.168.75.76
-
+| user | pass |  ip |  port |
+| ------ | ------ |  ------ | ------ |
+| postgres | postgres | 192.168.75.76 | 5432 |
 
 Create database and Restore your backup
 ---------------------------------------
@@ -75,7 +70,9 @@ createdb mydb
 * Restore database
 
 ```
-sudo -u postgres psql mydb <backup_file>
+sudo -u postgres psql mydb < <backup_file>
 ```
+
+
 
 
