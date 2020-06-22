@@ -15,21 +15,19 @@ Setup
 * Clone this repo
 
 * Start virtual machine
-
 ```sh
 cd postgres-server-dev
 vagrant up
 ```
 * Stop virtual machine
-
 ```sh
 vagrant halt
 ```
 * Delete virtual machine
-
 ```
 vagrant destroy
 ```
+
 * Connection to Postgres 
 
 | user | pass |  ip |  port |
@@ -37,40 +35,21 @@ vagrant destroy
 | postgres | postgres | 192.168.75.76 | 5432 |
 
 Create database and Restore your backup
----------------------------------------
+---------------------------------------------------
 
-* Install  plugin scp
+* In Host:  Copy your backup file  to folder backup
 
-```
-vagrant plugin install vagrant-scp
-```
-
-* Copy your backup file  to vagrant home
-```
-vagrant scp <backup_file>  :~/
-```
-
-* Login ssh
-
+* In Host : Login ssh
 ```
 vagrant ssh
 ```
-
-* If you use windows
-
-```
-dos2unix  <backup_file>
-```
-
-* Create database
-
+* In Guest :Create database
 ```
 createdb mydb 
 ```
-* Restore database
-
+* In Guest : Restore database
 ```
-sudo -u postgres psql mydb < <backup_file>
+sudo -u postgres psql mydb <  backup / <backup_file>
 ```
 
 
