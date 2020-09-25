@@ -49,7 +49,7 @@ createdb mydb
 ```
 * In Guest : Restore database
 ```
-sudo -u postgres psql mydb <  backup / <backup_file>
+sudo -u postgres psql mydb <  backup/backup_file.sql
 ```
 
 
